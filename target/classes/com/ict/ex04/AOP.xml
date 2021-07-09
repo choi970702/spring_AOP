@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<!-- AOP
+	 0. porm.xml에서 aop 라이브러리 추가 
+	 1. Namespaces에서 aop 추가 
+	 2. 관련 객체 생성
+	<bean id="boy" class="com.ict.ex04.Boy"></bean>
+	<bean id="girl" class="com.ict.ex04.Girl"></bean>
+	<bean id="myaspect" class="com.ict.ex04.MyAspect"></bean>
+	 3. AOP 작성 
+	<aop:config>
+		 어느 지점에서 실행할지 설정 : aop:pointcut 설정 
+		 <aop:pointcut expression="execution(* doSomting())" id="myPointCut"/>
+		<aop:pointcut expression="execution(* do*(..))" id="myPointCut"/>
+		 무엇을 언제할지 지정(DI 필요) 
+		<aop:aspect ref="myaspect">
+			<aop:before method="pre" pointcut-ref="myPointCut"/>
+			<aop:after method="next" pointcut-ref="myPointCut"/>
+			<aop:after method="next_throwing" pointcut-ref="myPointCut"/>
+		</aop:aspect>
+	</aop:config> -->
+	<context:annotation-config></context:annotation-config>
+	<context:component-scan base-package="com.ict.ex04"></context:component-scan>
+	<aop:aspectj-autoproxy expose-proxy="true"></aop:aspectj-autoproxy>
+</beans>
